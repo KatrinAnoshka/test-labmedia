@@ -282,17 +282,18 @@ img.profile__avatar-img {
 
 /********* Breadcrumbs *********/
 
+
 ul.breadcrumb {
      margin: 0;
      padding: 0;
+     padding-top: 60px;
      list-style: none;
      
 }
 .breadcrumb li{
     float: left;
     padding-right: 15px;
-    padding-top: 60px;
-     padding-bottom: 45px;
+    margin-bottom: 45px;
     font-size: 14px;
      text-decoration: none;
      color: #bbb;
@@ -319,25 +320,143 @@ ul.breadcrumb {
 
 /**************Faculty-section**************/
 
-.faculty {
-
-}
 .faculty__wrap {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: flex;
+    justify-content: space-between;
+}
+.faculty__descr,
+.tag,
+.classifiers,
+.competencies {
+    width: 810px;
+    padding-right: 20px;
 }
 .faculty__title {
     font-size: 52px;
     color: #000;
+    -ms-text-align-last: auto;
+    text-align-last: auto;
+    line-height: 1.2;
 }
 .faculty__text {
     font-size: 24px;
     color: #000;
+    padding-top: 45px;
+    line-height: 1.3;
 }
 
+.faculty__slider {
+    width: 610px;
+    height: 300px;
+    background-color: #000;
+    margin-top: 20px;
+}
+
+.tag {
+    padding-top: 45px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.tag__item {
+    color: #666;
+    background-color: #ececec;
+    border-radius: 3px;
+    padding: 10px;
+    margin-right: 7px;
+    font-size: 12px;
+}
+.tag__item:hover {
+    color: #fd5520;
+}
+.classifiers {
+    padding-top: 30px;
+}
+.competencies {
+    padding-top: 25px;
+}
+.classifiers__title,
+.competencies__title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+}
+.competencies__items,
+.classifiers__items {
+    padding-top: 13px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.classifiers__item,
+.competencies__item {
+    font-size: 12px;
+    color: #666;
+    padding-bottom: 2px;
+    padding-top: 7px;
+    border-bottom: 1px solid #bbb;
+    margin-right: 20px;
+}
+.edit {
+    padding-top: 30px;
+}
+.edit__img {
+    padding-right: 10px;
+    fill: #000;
+}
+.edit__text {
+    font-size: 14px;
+    color: #fd5520;
+   padding-bottom: 1px;
+    border-bottom: 1px dotted #fd5520;
+}
+a.edit__link:hover .edit__text {
+    border: none;
+    padding-bottom: 2px;
+}
+a.edit__link:hover .edit__img {
+    fill: #fd5520;
+}
+
+/***********Members-section***********/
+
+.members {
+    padding-top: 95px;
+}
+.member__title {
+    font-size: 40px;
+    color: #000;
+}
+.members__links {
+    padding-top: 45px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.members__link {
+    font-size: 14px;
+    color: #fd5520;
+    margin-right: 30px;
+    border-bottom: 1px solid #fd5520;
+}
+.members__link:hover {
+    border: none;
+}
 /***************--------- Pop-up-form ---------***************/
 
 .hidden {
