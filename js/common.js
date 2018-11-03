@@ -85,28 +85,28 @@ $(document).ready(function() {
 	/* Flexslider */
    	
    	$(window).load(function(){
-        $('.slider-wrap .flexslider').flexslider({
+        $('.flexslider').flexslider({
             animation: "slide",
             touch: true,
             start: function(slider){
                 $('body').removeClass('loading');
             }
         });
-        $('.products .flexslider').flexslider({
-		    animation: "slide",
-		    touch: true,		
-	  	});
-	  	$('.review .flexslider').flexslider({
-		    animation: "slide",		    
-		    touch: true
-	  	});
-	  	$('.flexslider-clients').flexslider({
-		    animation: "slide",
-		    touch: true,
-		    animationLoop: false,
-		    itemWidth: 210,
-		    itemMargin: 150
-		});
+  //       $('.products .flexslider').flexslider({
+		//     animation: "slide",
+		//     touch: true,		
+	 //  	});
+	 //  	$('.review .flexslider').flexslider({
+		//     animation: "slide",		    
+		//     touch: true
+	 //  	});
+	 //  	$('.flexslider-clients').flexslider({
+		//     animation: "slide",
+		//     touch: true,
+		//     animationLoop: false,
+		//     itemWidth: 210,
+		//     itemMargin: 150
+		// });
     });
 
 
