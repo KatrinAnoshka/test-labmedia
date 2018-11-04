@@ -2,10 +2,16 @@ $(document).ready(function() {
 
 	/* Adaptive menu */
    
-    $('.menu__icon').on('click', function(){
-        $('.menu').toggleClass('menu_state_open');
-        $('.our-contacts').toggleClass('hidden-div');
-    });
+    // $('.menu__icon').on('click', function(){
+    //     $('.menu').toggleClass('menu_state_open');
+    //     $('.our-contacts').toggleClass('hidden-div');
+    // });
+    $(".menu__icon").click(function() {
+		$(this).toggleClass("on");
+		$(".menu").slideToggle();
+		// $('.our-contacts').toggleClass('hidden-div')
+		return false;
+	});
 
     /*******************  Табы переключатели   *******************/
 	$(".tab__item").not(":first").hide();
