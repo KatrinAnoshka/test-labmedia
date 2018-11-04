@@ -10,11 +10,11 @@ $(document).ready(function() {
 
     /*  Tabs  */
 
-	$(".tab__item").not(":first").hide();
-	$(".tabs__wrapper .tab").click(function() {
-		$(".tabs__wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
-		$(".tab__item").hide().eq($(this).index()).fadeIn()
-	}).eq(0).addClass("active");
+	// $(".tab__item").not(":first").hide();
+	// $(".tabs__wrapper .tab").click(function() {
+	// 	$(".tabs__wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
+	// 	$(".tab__item").hide().eq($(this).index()).fadeIn()
+	// }).eq(0).addClass("active");
 
 	/* Pop-Up forms */
 

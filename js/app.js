@@ -14,13 +14,10 @@ labmedia.controller('members', function table($scope) {
      name: 'Константин Константинович Константинопольский',
      range: 'Руководитель сообщества',
      position: 'Кандидат экономических наук, профессор, старший преподователь',
-     rate: '49',
+     rate: 49,
      online: false,
      types: [
-       {
-         link: '#',
-         title: 'Эксперт'
-       },
+     
        {
          link: '#',
          title: 'Внутренний тренер'
@@ -32,7 +29,7 @@ labmedia.controller('members', function table($scope) {
      name: 'Дмитрий Белоусов',
      range: 'Модератор',
      position: 'Кандидат экономических наук, профессор',
-     rate: '110',
+     rate: 110,
      online: true,
      types: []
    },
@@ -41,7 +38,7 @@ labmedia.controller('members', function table($scope) {
      name: 'Евгения Константинопольская',
      range: 'Руководитель сообщества Модератор',
      position: 'Аналитик смененная должность',
-     rate: '29',
+     rate: 29,
      online: true,
      types: [
        {
@@ -59,7 +56,7 @@ labmedia.controller('members', function table($scope) {
      name: 'Дмитрий Белоусов',
      range: 'Модератор',
      position: 'Кандидат экономических наук, профессор',
-     rate: '150',
+     rate: 150,
      online: true,
      types: []
    },
@@ -68,7 +65,7 @@ labmedia.controller('members', function table($scope) {
      name: 'Константин Константинович Константинопольский',
      range: 'Руководитель сообщества',
      position: 'Кандидат экономических наук, профессор, старший преподователь',
-     rate: '49',
+     rate: 49,
      online: false,
      types: [
        {
@@ -86,7 +83,7 @@ labmedia.controller('members', function table($scope) {
       name: 'Дмитрий Белоусов',
       range: 'Модератор',
       position: 'Кандидат экономических наук, профессор',
-      rate: '210',
+      rate: 210,
       online: true,
       types: []
     },
@@ -95,7 +92,7 @@ labmedia.controller('members', function table($scope) {
       name: 'Константин Константинович Константинопольский',
       range: 'Руководитель сообщества',
       position: 'Кандидат экономических наук, профессор, старший преподователь',
-      rate: '49',
+      rate: 49,
       online: false,
       types: [
         {
@@ -113,7 +110,7 @@ labmedia.controller('members', function table($scope) {
       name: 'Иван Алексеев',
       range: 'Руководитель сообщества',
       position: 'Аналитик смененная должность',
-      rate: '49',
+      rate: 49,
       online: false,
       types: []
     },
@@ -122,7 +119,7 @@ labmedia.controller('members', function table($scope) {
       name: 'Константин Константинович Константинопольский',
       range: 'Руководитель сообщества',
       position: 'Кандидат экономических наук, профессор, старший преподователь',
-      rate: '49',
+      rate: 49,
       online: false,
       types: [
         {
@@ -140,7 +137,7 @@ labmedia.controller('members', function table($scope) {
       name: 'Дмитрий Белоусов',
       range: 'Модератор',
       position: 'Кандидат экономических наук, профессор',
-      rate: '110',
+      rate: 110,
       online: true,
       types: []
     },
@@ -149,7 +146,7 @@ labmedia.controller('members', function table($scope) {
       name: 'Евгения Константинопольская',
       range: 'Руководитель сообщества Модератор',
       position: 'Аналитик смененная должность',
-      rate: '29',
+      rate: 29,
       online: true,
       types: [
         {
@@ -167,7 +164,7 @@ labmedia.controller('members', function table($scope) {
        name: 'Константин Константинович Константинопольский',
        range: 'Руководитель сообщества',
        position: 'Кандидат экономических наук, профессор, старший преподователь',
-       rate: '49',
+       rate: 49,
        online: false,
        types: [
          {
@@ -268,8 +265,6 @@ var tab = true;
 
  $scope.toggle = function(){
    tab = !tab;
-
-   console.log();
 
    if(tab){
      $scope.rows = main;
