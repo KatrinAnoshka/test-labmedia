@@ -572,6 +572,7 @@ ul.breadcrumb {
     margin-bottom: 60px;
 }
 a.members__subtitle {
+    display: block;
     font-size: 14px;
     color: #000;
     font-weight: 800;

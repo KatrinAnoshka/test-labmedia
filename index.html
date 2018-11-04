@@ -2,7 +2,7 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="ru"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ru" ng-app="labmedia"> <!--<![endif]-->
 
 <head>
 
@@ -24,6 +24,8 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+ 	<script src="js/app.js"></script>
 
 </head>
 
@@ -149,211 +151,34 @@
 
 	<!--********** Members-section **********-->
 
-	<section class="members">
+	<section class="members" ng-controller="members">
 		
 		<h2 class="members__title">Участники</h2>
 
 		<div class="members__links">
-			<a href="#" class="members__link">По алфавиту</a>
-			<a href="#" class="members__link">По популярности</a>
-			<a href="#" class="members__link">Эксперты</a>
-			<a href="#" class="members__link">Внутренние тренеры</a>
+			<a href="" ng-click="sortBy('name')"  class="members__link">По алфавиту</a>
+			<a href="" ng-click="sortBy('rate')" class="members__link">По популярности</a>
+			<a href="" ng-click="filterBy('Эксперт')" class="members__link">Эксперты</a>
+			<a href="" ng-click="filterBy('Внутренний тренер')" class="members__link">Внутренние тренеры</a>
 		</div>
 
 		<div class="members__wrap">
 			
-			<div class="members__item">
-				<div class="members__avatar">
-					<p>И.А.</p>
-					<img src="img/members/1.jpeg" alt="avatar" class="members__avatar-img">
+			<div class="members__item" ng-repeat="member in members | orderBy:propertyName:reverse |  filter:filter">
+				<div class="members__avatar {{member.avatar === '' ? 'without__avatar' : ''}}">
+					<p>{{member.name[0]}}. {{member.name.split(' ')[1][0]}}.</p>
+					<img src="{{member.avatar}}" alt="avatar" class="members__avatar-img">
 				</div>
 				<div class="members__descr">
-					<a href="#" class="members__subtitle">Константин Константинович Константинопольский</a>
-					<p class="members__text">Руководитель сообщества</p>
-					<a href="#" class="members__span">Эксперт</a>
-					<a href="#" class="members__span">Внутренний тренер</a>
-					<p class="members__text">Кандидат экономических наук, профессор, старший преподователь</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">49</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Задать вопрос</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar">
-					<p>И.А.</p>
-					<img src="img/members/2.jpg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Дмитрий Белоусов</a>
-					<p class="members__text">Модератор</p>
-					<a href="#" class="members__span without__span">Эксперт</a>
-					<a href="#" class="members__span without__span">Внутренний тренер</a>
-					<p class="members__text">Кандидат экономических наук, профессор</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">110</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Пригласить к общению</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar">
-					<p>И.А.</p>
-					<img src="img/members/2.jpg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Дмитрий Белоусов</a>
-					<p class="members__text">Модератор</p>
-					<a href="#" class="members__span without__span">Эксперт</a>
-					<a href="#" class="members__span without__span">Внутренний тренер</a>
-					<p class="members__text">Кандидат экономических наук, профессор</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">110</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Пригласить к общению</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar">
-					<p>И.А.</p>
-					<img src="img/members/2.jpg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Дмитрий Белоусов</a>
-					<p class="members__text">Модератор</p>
-					<a href="#" class="members__span without__span">Эксперт</a>
-					<a href="#" class="members__span without__span">Внутренний тренер</a>
-					<p class="members__text">Кандидат экономических наук, профессор</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">110</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Пригласить к общению</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar">
-					<p>И.А.</p>
-					<img src="img/members/3.jpg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Евгения Константинопольская</a>
-					<p class="members__text">Руководитель сообщества<br>Модератор</p>
-					<a href="#" class="members__span without__span">Эксперт</a>
-					<a href="#" class="members__span without__span">Внутренний тренер</a>
-					<p class="members__text">Аналитик смененная должность</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">15</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Пригласить к общению</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar without__avatar">
-					<p>И.А.</p>
-					<img src="img/members/3.jpg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Иван Алексеев</a>
-					<p class="members__text members__text--without-text">Руководитель сообщества</p>
-					<p class="members__text members__text--without-text">Модератор</p>
-					<a href="#" class="members__span">Внутренний тренер</a>
-					<a href="#" class="members__span">Эксперт</a>
-					<p class="members__text">Технический директор</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">68</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Задать вопрос</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar without__avatar">
-					<p>И.А.</p>
-					<img src="img/members/3.jpg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Иван Алексеев</a>
-					<p class="members__text members__text--without-text">Руководитель сообщества</p>
-					<p class="members__text members__text--without-text">Модератор</p>
-					<a href="#" class="members__span">Внутренний тренер</a>
-					<a href="#" class="members__span">Эксперт</a>
-					<p class="members__text">Технический директор</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">68</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Задать вопрос</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar without__avatar">
-					<p>И.А.</p>
-					<img src="img/members/3.jpg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Иван Алексеев</a>
-					<p class="members__text members__text--without-text">Руководитель сообщества</p>
-					<p class="members__text members__text--without-text">Модератор</p>
-					<a href="#" class="members__span">Внутренний тренер</a>
-					<a href="#" class="members__span">Эксперт</a>
-					<p class="members__text">Технический директор</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">68</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Задать вопрос</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar">
-					<p>И.А.</p>
-					<img src="img/members/2.jpg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Дмитрий Белоусов</a>
-					<p class="members__text">Модератор</p>
-					<a href="#" class="members__span without__span">Эксперт</a>
-					<a href="#" class="members__span without__span">Внутренний тренер</a>
-					<p class="members__text">Кандидат экономических наук, профессор</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">70</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Пригласить к общению</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar">
-					<p>И.А.</p>
-					<img src="img/members/2.jpg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Дмитрий Белоусов</a>
-					<p class="members__text">Модератор</p>
-					<a href="#" class="members__span without__span">Эксперт</a>
-					<a href="#" class="members__span without__span">Внутренний тренер</a>
-					<p class="members__text">Кандидат экономических наук, профессор</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">14</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Пригласить к общению</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar">
-					<p>И.А.</p>
-					<img src="img/members/1.jpeg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Константин Константинович Константинопольский</a>
-					<p class="members__text">Руководитель сообщества</p>
-					<a href="#" class="members__span">Эксперт</a>
-					<a href="#" class="members__span">Внутренний тренер</a>
-					<p class="members__text">Кандидат экономических наук, профессор, старший преподователь</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">14</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Задать вопрос</a>
-				</div>
-			</div>
-
-			<div class="members__item">
-				<div class="members__avatar">
-					<p>И.А.</p>
-					<img src="img/members/1.jpeg" alt="avatar" class="members__avatar-img">
-				</div>
-				<div class="members__descr">
-					<a href="#" class="members__subtitle">Константин Константинович Константинопольский</a>
-					<p class="members__text">Руководитель сообщества</p>
-					<a href="#" class="members__span">Эксперт</a>
-					<a href="#" class="members__span">Внутренний тренер</a>
-					<p class="members__text">Кандидат экономических наук, профессор, старший преподователь</p>
-					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">14</span></div>
-					<a href="#form_back" class="order-call button button--transparent">Задать вопрос</a>
+					<a href="#" class="members__subtitle">{{member.name}}</a>
+					<p class="members__text">{{member.range}}</p>
+					<span ng-repeat="type in member.types">
+					<a href="{{type.link}}" class="members__span">{{type.title}}</a>
+					</span>
+					<p class="members__text">{{member.position}}</p>
+					<div class="members__rate">Рейтинг активности: <span class="members__rate--number">{{member.rate}}</span></div>
+					<span ng-if="!member.online"><a href="#form_back" class="order-call button button--transparent" >Задать вопрос</a></span>
+					<span ng-if="member.online"><a href="#form_back" class="order-call button button--transparent" >Пригласить к общению</a></span>
 				</div>
 			</div>
 
@@ -361,7 +186,7 @@
 		</div> <!-- end of Members__wrap -->
 
 		<a href="#form_back" class="order-call button button--transparent button--orange">Стать участником</a>
-		<a href="#form_back" class="button button--transparent button--transparent-large">Показать всех</a>
+		<a href="#form_back" ng-click="filterBy('')" class="button button--transparent button--transparent-large">Показать всех</a>
 	</section>
 
 <!--*********** Courses-section ***********-->
@@ -419,134 +244,49 @@
 
 	<!--******* Request-section *******-->
 
-	<section class="request">
+	<section class="request" id="tabs">
 		
 		<h2 class="request__title">Заявки</h2>
 
 		<div class="tabs__container">		
-			<div class="tabs__wrapper">
+			<div class="tabs__wrapper" ng-controller="table">
 
 				<div class="tabs clearfix">
-					<span class="tab">Основные сведения</span>
-				    <span class="tab">История согласования</span>
+					<span class="tab {{main}}" ng-click="toggle()" >Основные сведения</span>
+				    <span class="tab {{history}}" ng-click="toggle()">История согласования</span>
 				</div>
 
 				<div class="tab__content">
 			
-					<div class="tab__item">						
-						<table class="table">
+					<div class="tab__item">
+						<table class="table" >
 							<thead><tr>
 								<th class="table__row--first"></th>
 							    <th>Подразделение</th>
-							    <th>Функция</th>  
-							    <th>Инициатор заявки</th>  
-							    <th>Должность</th>  
-							    <th>Дата заявки</th>  
-							    <th>Программа обучения</th>  
-							    <th>Стоимость</th>  
-							    <th>Статус заявки</th>  
+							    <th>Функция</th>
+							    <th>Инициатор заявки</th>
+							    <th>Должность</th>
+							    <th>Дата заявки</th>
+							    <th>Программа обучения</th>
+							    <th>Стоимость</th>
+							    <th>Статус заявки</th>
 							   	<th class="table__row--last"></th>
 							</tr></thead>
-							<tbody class="table__body">
-							    <tr class="table__row clearfix">
+							<tbody class="table__body" >
+							    <tr class="table__row clearfix" ng-repeat="row in rows">
 							      	<td class="table__row--first"></td>
-							      	<td>Лаборатория мультимедиа</td>
-							      	<td>Современные технологии добычи нефти</td>
-							      	<td>Рыжкова Елена Александровна</td>
-							      	<td>Аналитик смененная должность</td>
-							      	<td>12..04.2017</td>
-							      	<td>Организация и управление инженерными изысканиями Организация и управление инженерными изысканиями</td>
-							      	<td>200 руб.</td>
-							      	<td>Согласование линейным руководителем</td>
-							      	<td class="table__row--last"></td>
-							    </tr>
-							     <tr class="table__row clearfix">
-							      	<td class="table__row--first"></td>
-							      	<td>Лаборатория мультимедиа</td>
-							      	<td>Современные технологии добычи нефти</td>
-							      	<td>Рыжкова Елена Александровна</td>
-							      	<td>Аналитик смененная должность</td>
-							      	<td>12..04.2017</td>
-							      	<td>Организация и управление инженерными изысканиями Организация и управление инженерными изысканиями</td>
-							      	<td>200 руб.</td>
-							      	<td>Согласование линейным руководителем</td>
-							     <td class="table__row--last"></td>
-							    </tr>
-							    <tr class="table__row clearfix">
-							      	<td class="table__row--first"></td>
-							      	<td>Лаборатория мультимедиа</td>
-							      	<td>Современные технологии добычи нефти</td>
-							      	<td>Рыжкова Елена Александровна</td>
-							      	<td>Аналитик смененная должность</td>
-							      	<td>12..04.2017</td>
-							      	<td>Организация и управление инженерными изысканиями Организация и управление инженерными изысканиями</td>
-							      	<td>200 руб.</td>
-							      	<td>Согласование линейным руководителем</td>
+							      	<td>{{row.subdivision}}</td>
+							      	<td>{{row.function}}</td>
+							      	<td>{{row.initiator}}</td>
+							      	<td>{{row.position}}</td>
+							      	<td>{{row.date}}</td>
+							      	<td>{{row.program}}</td>
+							      	<td>{{row.Cost}}</td>
+							      	<td>{{row.Status}}</td>
 							      	<td class="table__row--last"></td>
 							    </tr>
 							</tbody>
 						</table>
-					</div> <!-- end of Tab__item -->
-
-					<div class="tab__item">						
-						<table class="table">
-							<thead><tr>
-								<th class="table__row--first"></th>
-							    <th>Подразделение</th>
-							    <th>Функция</th>  
-							    <th>Инициатор заявки</th>  
-							    <th>Должность</th>  
-							    <th>Дата заявки</th>  
-							    <th>Программа обучения</th>  
-							    <th>Стоимость</th>  
-							    <th>Статус заявки</th>  
-							    <th>Стоимость</th>  
-							    <th>Статус заявки</th>  
-							   <th class="table__row--last"></th>							   
-							</tr></thead>
-							<tbody class="table__body">
-							    <tr class="table__row clearfix">
-							      	<td class="table__row--first"></td>
-							      	<td>Лаборатория мультимедиа</td>
-							      	<td>Современные технологии добычи нефти</td>
-							      	<td>Рыжкова Елена Александровна</td>
-							      	<td>Аналитик смененная должность</td>
-							      	<td>12..04.2017</td>
-							      	<td>Организация и управление инженерными изысканиями Организация и управление инженерными изысканиями</td>
-							      	<td>200 руб.</td>
-							      	<td>Согласование линейным руководителем</td>
-							      	<td>200 руб.</td>
-							      	<td>Согласование линейным руководителем</td>
-							      	<td class="table__row--last"></td>							      
-							    </tr>
-							     <tr class="table__row clearfix">
-							      	<td class="table__row--first"></td>
-							      	<td>Лаборатория мультимедиа</td>
-							      	<td>Современные технологии добычи нефти</td>
-							      	<td>Рыжкова Елена Александровна</td>
-							      	<td>Аналитик смененная должность</td>
-							      	<td>12..04.2017</td>
-							      	<td>Организация и управление инженерными изысканиями Организация и управление инженерными изысканиями</td>
-							      	<td>200 руб.</td>
-							      	<td>Согласование линейным руководителем</td>
-							      	<td>200 руб.</td>
-							      	<td>Согласование линейным руководителем</td>
-							     <td class="table__row--last"></td>
-							    </tr>
-							    <tr class="table__row clearfix">
-							      	<td class="table__row--first"></td>
-							      	<td>Лаборатория мультимедиа</td>
-							      	<td>Современные технологии добычи нефти</td>
-							      	<td>Рыжкова Елена Александровна</td>
-							      	<td>Аналитик смененная должность</td>
-							      	<td>12..04.2017</td>
-							      	<td>Организация и управление инженерными изысканиями Организация и управление инженерными изысканиями</td>
-							      	<td>200 руб.</td>
-							      	<td>Согласование линейным руководителем</td>
-							      	<td class="table__row--last"></td>
-							    </tr>
-							</tbody>
-						</table>					
 					</div> <!-- end of Tab__item -->
 
 				</div> <!-- end of Tab__content -->
@@ -556,19 +296,19 @@
 
 	    <div class="pagination">
 	        <ul>
-	            <li class="active"><a href="#">1</a></li>
-	            <li><a href="#">2</a></li>
-	            <li><a href="#">3</a></li>
-	            <li><a href="#">4</a></li>
-	            <li><a href="#">5</a></li>
-	            <li><a href="#">6</a></li>  
-	            <li><a href="#">7</a></li>
-	            <li><a href="#">8</a></li>
-	            <li class="pagination__hidden"><a href="#">9</a></li>
-	            <li class="pagination__hidden"><a href="#">10</a></li>
-	            <li class="pagination__hidden"><a href="#">11</a></li>
-	            <li class="pagination__dots"><a href="#">...</a></li>
-	            <li><a href="#">20</a></li>
+	            <li class="active"><a href="#tabs">1</a></li>
+	            <li><a href="#tabs">2</a></li>
+	            <li><a href="#tabs">3</a></li>
+	            <li><a href="#tabs">4</a></li>
+	            <li><a href="#tabs">5</a></li>
+	            <li><a href="#tabs">6</a></li>
+	            <li><a href="#tabs">7</a></li>
+	            <li><a href="#tabs">8</a></li>
+	            <li class="pagination__hidden"><a href="#tabs">9</a></li>
+	            <li class="pagination__hidden"><a href="#tabs">10</a></li>
+	            <li class="pagination__hidden"><a href="#tabs">11</a></li>
+	            <li class="pagination__dots"><a href="#tabs">...</a></li>
+	            <li><a href="#tabs">20</a></li>
 	        </ul>
 	    </div>
 	
