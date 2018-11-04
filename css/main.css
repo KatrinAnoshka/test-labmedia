@@ -16,6 +16,7 @@ a:hover, a:active, a:focus {
 }
 a.button {
     display: block;
+    
     max-width: 100%;
     cursor: pointer;
     text-align: center;
@@ -675,7 +676,10 @@ a.members__span:hover {
     line-height: 1.4;
     text-align: center;
     padding: 8px 20px;
-    
+    width: 190px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 
 }
 .button--transparent:hover {
